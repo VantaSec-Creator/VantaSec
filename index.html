@@ -6,7 +6,6 @@
   <title>Vantasec - Segurança Cibernética</title>
   <meta name="description" content="Vantasec - Segurança Cibernética para empresas e pessoas físicas. Auditoria, pentest, consultoria e proteção pessoal." />
   <link rel="icon" href="favicon.ico" />
-  <link rel="icon" href="favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
@@ -227,6 +226,7 @@
         margin-top: 10px;
       }
     }
+    .hidden { display: none; }
   </style>
 </head>
 <body>
@@ -276,7 +276,12 @@
 
   <section id="contato" class="contact-form" aria-labelledby="contato-title">
     <h2 id="contato-title">Fale Conosco</h2>
-    <form action="mailto:contato@vantasec.com.br" method="POST" enctype="text/plain">
+    <form name="contato" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/obrigado.html">
+      <input type="hidden" name="form-name" value="contato" />
+      <p class="hidden">
+        <label>Não preencha este campo se for humano: <input name="bot-field" /></label>
+      </p>
+
       <label for="nome">Nome:</label>
       <input type="text" id="nome" name="nome" required />
 
