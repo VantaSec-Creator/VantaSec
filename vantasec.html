@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vantasec - Segurança Cibernética</title>
+  <meta name="description" content="Vantasec - Segurança Cibernética para empresas e pessoas físicas. Auditoria, pentest, consultoria e proteção pessoal." />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <meta name="theme-color" content="#099aa5" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0b121a; /* fundo preto azulado */
+      color: #e1e6eb; /* texto claro */
+      line-height: 1.6;
+    }
+    header {
+      background: #099aa5; /* azul turquesa mais suave */
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px #099aa599;
+    }
+    header img.logo {
+      height: 40px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav a:hover,
+    nav a:focus {
+      color: #078b92;
+      outline: none;
+    }
+    .banner {
+      background: linear-gradient(rgba(9, 154, 165, 0.8), rgba(9, 154, 165, 0.8)), url('https://images.unsplash.com/photo-1537432376769-00a086ee46a3?auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+      height: 400px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .banner h1 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+      text-shadow: 0 0 6px #078b92;
+    }
+    .banner p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      text-shadow: 0 0 4px #078b92;
+    }
+    .btn-cta {
+      background: #099aa5;
+      color: white;
+      padding: 15px 30px;
+      font-weight: 700;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-size: 1rem;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 8px #099aa599;
+    }
+    .btn-cta:hover,
+    .btn-cta:focus {
+      background: #078b92;
+      box-shadow: 0 0 15px #078b92bb;
+      outline: none;
+    }
+    section {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      color: #099aa5;
+      margin-bottom: 25px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 2rem;
+      text-shadow: 0 0 4px #078b92;
+    }
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    .service-card {
+      background: #111a26;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgb(9 154 165 / 0.2);
+      flex: 1 1 280px;
+      max-width: 300px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .service-card:hover,
+    .service-card:focus-within {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 15px rgb(9 154 165 / 0.4);
+      outline: none;
+    }
+    .service-card h3 {
+      margin-bottom: 15px;
+      color: #099aa5;
+      text-shadow: 0 0 3px #078b92;
+    }
+    .service-card p {
+      color: #b8c3cc;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+    .about {
+      background: #111a26;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgb(9 154 165 / 0.2);
+      max-width: 900px;
+      margin: 0 auto 60px;
+      color: #d6dce5;
+    }
+    .contact-form {
+      background: #111a26;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgb(9 154 165 / 0.2);
+      max-width: 600px;
+      margin: 0 auto 60px;
+      color: #d6dce5;
+    }
+    .contact-form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #099aa5;
+      text-shadow: 0 0 2px #078b92;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px 10px;
+      margin-bottom: 20px;
+      border: 1px solid #099aa5;
+      border-radius: 6px;
+      font-size: 1rem;
+      resize: vertical;
+      font-family: inherit;
+      background: #0b121a;
+      color: #e1e6eb;
+      transition: border-color 0.3s ease;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #078b92;
+      outline: none;
+      box-shadow: 0 0 6px #078b92aa;
+    }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: #7fbcc5;
+    }
+    .contact-form button {
+      background: #099aa5;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 8px #099aa599;
+    }
+    .contact-form button:hover,
+    .contact-form button:focus {
+      background: #078b92;
+      box-shadow: 0 0 15px #078b92bb;
+      outline: none;
+    }
+    footer {
+      background: #099aa5;
+      color: white;
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 0.9rem;
+      box-shadow: 0 -2px 10px #099aa5cc;
+    }
+    /* Responsivo */
+    @media (max-width: 768px) {
+      .services {
+        flex-direction: column;
+        gap: 20px;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo-vantasec.png" alt="Logo Vantasec" class="logo" />
+    <nav aria-label="Menu principal">
+      <a href="#servicos" tabindex="0">Serviços</a>
+      <a href="#sobre" tabindex="0">Sobre</a>
+      <a href="#contato" tabindex="0">Contato</a>
+    </nav>
+  </header>
+
+  <section class="banner" role="banner">
+    <h1>Vantasec — Protegendo seu mundo digital</h1>
+    <p>Segurança cibernética para empresas e pessoas físicas. Proteção, inovação e confiança.</p>
+    <button class="btn-cta" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})" aria-label="Solicite uma avaliação grátis">Solicite uma avaliação grátis</button>
+  </section>
+
+  <section id="servicos" aria-labelledby="servicos-title">
+    <h2 id="servicos-title">Nossos Serviços</h2>
+    <div class="services">
+      <article class="service-card" tabindex="0">
+        <h3>Auditoria de Segurança</h3>
+        <p>Identificação de vulnerabilidades para blindar sua empresa contra ataques digitais.</p>
+      </article>
+      <article class="service-card" tabindex="0">
+        <h3>Testes de Invasão (Pentest)</h3>
+        <p>Simulamos ataques controlados para garantir a segurança da sua infraestrutura.</p>
+      </article>
+      <article class="service-card" tabindex="0">
+        <h3>Consultoria e Compliance</h3>
+        <p>Orientação para conformidade com LGPD e padrões internacionais como ISO 27001.</p>
+      </article>
+      <article class="service-card" tabindex="0">
+        <h3>Proteção para Pessoas</h3>
+        <p>Consultoria para proteger seus dados pessoais e dispositivos contra ameaças.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="sobre" class="about" aria-labelledby="sobre-title">
+    <h2 id="sobre-title">Sobre a Vantasec</h2>
+    <p>
+      Fundada por especialistas apaixonados por segurança digital, a Vantasec oferece soluções completas para proteger empresas e pessoas físicas contra ameaças cibernéticas. Nosso compromisso é garantir tranquilidade, inovação e total proteção para o seu mundo digital.
+    </p>
+  </section>
+
+  <section id="contato" class="contact-form" aria-labelledby="contato-title">
+    <h2 id="contato-title">Fale Conosco</h2>
+    <form action="mailto:contato@vantasec.com.br" method="POST" enctype="text/plain">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required />
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Vantasec. Todos os direitos reservados.
+  </footer>
+</body>
+</html>
