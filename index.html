@@ -302,21 +302,19 @@
 
   <section id="contato" class="contact-form" aria-labelledby="contato-title">
     <h2 id="contato-title">Fale Conosco</h2>
-    <form id="contact-form">
-  <input type="text" name="name" placeholder="Seu Nome" required>
-  <input type="email" name="email" placeholder="Seu Email" required>
-  <textarea name="message" placeholder="Mensagem"></textarea>
-  <button type="submit">Enviar</button>
+<form id="contactForm">
+  <input type="text" name="name" placeholder="Seu nome" required>
+  <input type="email" name="email" placeholder="Seu e-mail" required>
+  <button type="submit">Solicite uma avaliação grátis</button>
 </form>
 
 <script>
-document.getElementById("contact-form").addEventListener("submit", async function(e) {
+document.getElementById("contactForm").addEventListener("submit", async (e) => {
   e.preventDefault();
-  
+
   const formData = {
     name: e.target.name.value,
-    email: e.target.email.value,
-    message: e.target.message.value
+    email: e.target.email.value
   };
 
   const res = await fetch("/.netlify/functions/send-email", {
@@ -325,11 +323,10 @@ document.getElementById("contact-form").addEventListener("submit", async functio
     body: JSON.stringify(formData)
   });
 
-  const result = await res.json();
-  if (result.success) {
-    alert("E-mail enviado com sucesso!");
+  if (res.ok) {
+    alert("Solicitação enviada! Verifique seu e-mail.");
   } else {
-    alert("Erro ao enviar.");
+    alert("Erro ao enviar. Tente novamente.");
   }
 });
 </script>
@@ -341,3 +338,4 @@ document.getElementById("contact-form").addEventListener("submit", async functio
   </footer>
 </body>
 </html>
+
